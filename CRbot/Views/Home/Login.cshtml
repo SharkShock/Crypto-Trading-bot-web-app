@@ -1,0 +1,309 @@
+﻿@{
+//Layout = null;
+}
+@model CRbot.Models.User
+
+
+
+<head>
+    <style>
+
+        @*js*@
+
+        $('.message a').click(function(){
+   $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
+});
+
+        @@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+        .login-page {
+            width: 360px;
+            padding: 8% 0 0;
+            margin: auto;
+        }
+
+        .form {
+            position: relative;
+            z-index: 1;
+            background: #FFFFFF;
+            max-width: 360px;
+            margin: 0 auto 100px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 10px 10px 0 rgba(0, 0, 0, 0.24);
+        }
+
+            .form input {
+                font-family: "Roboto", sans-serif;
+                outline: 0;
+                background: #f2f2f2;
+                width: 100%;
+                border: 0;
+                margin: 0 0 15px;
+                padding: 15px;
+                box-sizing: border-box;
+                font-size: 14px;
+            }
+
+            .form button {
+                font-family: "Roboto", sans-serif;
+                text-transform: uppercase;
+                outline: 0;
+                background: #4CAF50;
+                width: 100%;
+                border: 0;
+                padding: 15px;
+                color: #FFFFFF;
+                font-size: 14px;
+                -webkit-transition: all 0.3 ease;
+                transition: all 0.3 ease;
+                cursor: pointer;
+            }
+
+                .form button:hover, .form button:active, .form button:focus {
+                    background: #43A047;
+                }
+
+            .form .message {
+                margin: 15px 0 0;
+                color: #b3b3b3;
+                font-size: 12px;
+            }
+
+                .form .message a {
+                    color: #4CAF50;
+                    text-decoration: none;
+                }
+
+        }
+
+            .container:before, .container:after {
+                content: "";
+                display: block;
+                clear: both;
+            }
+
+            .container .info {
+                margin: 50px auto;
+                text-align: center;
+            }
+
+                .container .info h1 {
+                    margin: 0 0 15px;
+                    padding: 0;
+                    font-size: 36px;
+                    font-weight: 300;
+                    color: #1a1a1a;
+                }
+
+                .container .info span {
+                    color: #4d4d4d;
+                    font-size: 12px;
+                }
+
+                    .container .info span a {
+                        color: #000000;
+                        text-decoration: none;
+                    }
+
+                    .container .info span .fa {
+                        color: #EF3B3A;
+                    }
+
+        body {
+            background: #76b852; /* fallback for old browsers */
+            background: -webkit-linear-gradient(right, #76b852, #8DC26F);
+            background: -moz-linear-gradient(right, #76b852, #8DC26F);
+            background: -o-linear-gradient(right, #76b852, #8DC26F);
+            background: linear-gradient(to left, #76b852, #8DC26F);
+            font-family: "Roboto", sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+    </style>
+    <style>
+        @*wallpaper*@
+        body {
+            margin: 0;
+            padding: 0;
+            background: url("http://hdwallpaperdaily.com/wp-content/uploads/2014/09/abstract-mountain-peaks-wallpaper-1920x1080.jpg") no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+    </style>
+</head>
+
+
+<br />
+@{
+    ViewBag.Title = "Login";
+}
+@using (Html.BeginForm("Login", "Home", FormMethod.Post))
+{
+    //create form tag
+    @Html.AntiForgeryToken() //prevent CSRF attack
+                            @Html.ValidationSummary(true)
+    if (@ViewBag.Message != null)
+    {
+        <div style="border:2px solid red">
+            @ViewBag.Message
+        </div>
+    }
+
+    <div class="col-md-12">
+        <h1>LOG IN</h1>
+    </div>
+    <div class="login-page">
+        <div class="form">
+            <form class="login-form">
+                <table align="center">
+                    <tr>
+                        <img src="https://cdn.dribbble.com/users/37530/screenshots/2937858/drib_blink_bot.gif" width="180" height="180" />
+                        <td>
+                            @Html.TextBoxFor(a => a.Username)
+                        </td>
+                        <td>
+                            @Html.ValidationMessageFor(a => a.Username)
+                        </td>
+                    </tr>
+                    <tr>
+
+                        <td>
+                            @Html.PasswordFor(a => a.Password)
+                        </td>
+                        <td>
+                            @Html.ValidationMessageFor(a => a.Password)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input class="btn" type="submit" value="login" &raquo; />
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+
+    <h1>CRBot application v1.0.3</h1>
+
+    <div class="box">
+        <a class="button" href="#popup1">What's New?</a>
+    </div>
+
+
+    <div id="popup1" class="overlay">
+        <div class="popup">
+            <h2>New update bringing..</h2>
+            <a class="close" href="#">&times;</a>
+            <div class="content">
+                something here....
+            </div>
+        </div>
+    </div>
+
+
+    <style>
+
+h1 {
+  text-align: center;
+  font-family: Tahoma, Arial, sans-serif;
+  color: rgba(0, 0, 0, 0.24);
+  margin: 80px 0;
+}
+
+.box {
+  width: 40%;
+  margin: 0 auto;
+  background: rgba(255,255,255,0.2);
+  padding: 35px;
+  border: 2px solid #fff;
+  border-radius: 20px/50px;
+  background-clip: padding-box;
+  text-align: center;
+}
+
+.button {
+  font-size: 1em;
+  padding: 10px;
+  color: #fff;
+  border: 2px solid #06D85F;
+  border-radius: 20px/50px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+.button:hover {
+  background: #06D85F;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup {
+  margin: 70px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  width: 30%;
+  position: relative;
+  transition: all 5s ease-in-out;
+}
+
+.popup h2 {
+  margin-top: 0;
+  color: #333;
+  font-family: Tahoma, Arial, sans-serif;
+}
+.popup .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+.popup .close:hover {
+  color: #06D85F;
+}
+.popup .content {
+  max-height: 30%;
+  overflow: auto;
+}
+
+@@media screen and (max-width: 700px){
+  .box{
+    width: 70%;
+  }
+  .popup{
+    width: 70%;
+  }
+}
+    </style>
+
+}
+
+@* this is for JS section*@
+
+@section  Scripts
+    {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+

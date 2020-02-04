@@ -1,0 +1,122 @@
+﻿@model CRbot.Models.User
+
+@{
+    ViewBag.Title = "SettingsStyle";
+}
+
+<br>
+<div class="icon">
+    <form action="~/home/Settings">
+        <input type="image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Back_Arrow.svg/1024px-Back_Arrow.svg.png" width="30" height="30" />
+    </form>
+</div>
+<br />
+
+<div id="sum_box" class="row mbl">
+    <div class="col-sm-6 col-md-12">
+        <div class="panel rmd db mbm">
+            <div class="panel-body">
+                <div class="icon">
+                    <form action="">
+                        <input type="image" src="https://ormco.com/img/products/ormco-custom/personalization-magic-icon.png" width="70" height="70" />
+                    </form>
+                </div>
+                <h4 class="value">
+                    <span>Themes</span>
+                </h4>
+                <p class="description">
+                    Select your favorite style:
+                </p>
+                <br />
+                <div class="navbar-collapse collapse">
+                    <form action="Theme" method="post">
+
+                        <select id="SelectedId" name="SelectedId">
+                            <option value="1">Classic</option>
+                            <option value="2">Dark</option>
+                        </select>
+                        <input type="submit" value="Submit" class="btn btn-default" />
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+        <style>
+            @@import "//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css";
+            @@import "http://fonts.googleapis.com/css?family=Roboto:400,500";
+
+
+            #sum_box h4 {
+                text-align: left;
+                margin-top: 0px;
+                font-size: 30px;
+                margin-bottom: 0px;
+                padding-bottom: 0px;
+            }
+
+
+            #sum_box .db:hover {
+                background: #9ed6ff;
+                color: #000000;
+            }
+
+
+
+
+                #sum_box .db:hover .icon {
+                    opacity: 1;
+                    color: #999999;
+                }
+
+            #sum_box .icon {
+                color: #fff;
+                font-size: 55px;
+                margin-top: 7px;
+                margin-bottom: 0px;
+                float: right;
+            }
+
+
+            .panel.income.db.mbm {
+                background-color: #5cb85c;
+            }
+
+            .panel.profit.db.mbm {
+                background-color: #5bc0de;
+            }
+
+            .panel.task.db.mbm {
+                background-color: #f0ad4e;
+            }
+
+            .panel.info.db.mbm {
+                background-color: #cc4747;
+            }
+
+            .panel.profile.db.mbm {
+                background-color: #a84ecf;
+            }
+
+            .panel.settings.db.mbm {
+                background-color: #c8c8c8;
+            }
+
+            .panel.bot.db.mbm {
+                background-color: #f9f9f9;
+            }
+
+            .panel.rmd.db.mbm {
+                background-color: #41bdff;
+            }
+        </style>
+
+
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />

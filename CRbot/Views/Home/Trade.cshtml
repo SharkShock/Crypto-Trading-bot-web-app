@@ -1,0 +1,224 @@
+﻿@model CRbot.Models.User
+<head>
+    <style>
+        body {
+            background-color: white
+        }
+        /* Style The Dropdown Button */
+        .dropbtn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* The container <div> - needed to position the dropdown content */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Dropdown Content (Hidden by Default) */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+            /* Links inside the dropdown */
+            .dropdown-content a {
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+            }
+
+                /* Change color of dropdown links on hover */
+                .dropdown-content a:hover {
+                    background-color: #f1f1f1
+                }
+
+        /* Show the dropdown menu on hover */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Change the background color of the dropdown button when the dropdown content is shown */
+        .dropdown:hover .dropbtn {
+            background-color: #3e8e41;
+        }
+    </style>
+    <style>
+        @@import "//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css";
+        @@import "http://fonts.googleapis.com/css?family=Roboto:400,500";
+
+
+        #sum_box h4 {
+            text-align: left;
+            margin-top: 0px;
+            font-size: 30px;
+            margin-bottom: 0px;
+            padding-bottom: 0px;
+        }
+
+
+        #sum_box .db:hover {
+            background: #40516f;
+            color: #fff;
+        }
+
+
+
+
+            #sum_box .db:hover .icon {
+                opacity: 1;
+                color: #999999;
+            }
+
+        #sum_box .icon {
+            color: #fff;
+            font-size: 55px;
+            margin-top: 7px;
+            margin-bottom: 0px;
+            float: right;
+        }
+
+
+        .panel.income.db.mbm {
+            background-color: #5cb85c;
+        }
+
+        .panel.profit.db.mbm {
+            background-color: #5bc0de;
+        }
+
+        .panel.task.db.mbm {
+            background-color: #f0ad4e;
+        }
+
+        .panel.info.db.mbm {
+            background-color: #cc4747;
+        }
+
+        .panel.profile.db.mbm {
+            background-color: #a84ecf;
+        }
+
+        .panel.settings.db.mbm {
+            background-color: #c8c8c8;
+        }
+
+        .panel.bot.db.mbm {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+
+
+
+
+
+<br>
+<div class="icon">
+    <form action="~/home/index">
+        <input type="image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Back_Arrow.svg/1024px-Back_Arrow.svg.png" width="30" height="30" />
+    </form>
+</div>
+<br />
+
+<div id="sum_box" class="row mbl">
+    <div class="col-sm-6 col-md-12">
+        <div class="panel task db mbm">
+            <div class="panel-body">
+                <div class="icon">
+                    <form action="">
+                        <input type="image" src="https://image.flaticon.com/icons/png/512/237/237389.png" width="70" height="70" />
+                    </form>
+                </div>
+                <h4 class="value">
+                    <span>Auto Trading</span>
+                </h4>
+                <p class="description">
+                    A trading strategy where buy and sell orders are placed automatically based on an underlying system or program. The buy or sell orders are sent out to be executed in the market when a certain set of criteria is met.
+                </p>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-sm-6 col-md-12">
+    <div class="panel bot db mbm">
+        <div class="panel-body">
+            <div class="icon">
+                <form action="">
+                    <img class="pull-right" style="margin-top:10px;" src="http://www.brainhealth4ms.com/wp-content/themes/bh4ms/img/sectiongifs/ID_Cognition_101Light-Switch.gif" width="150" height="150">
+                </form>
+            </div>
+            <p class="description">
+                A trading strategy where buy and sell orders are placed automatically based on an underlying system or program. The buy or sell orders are sent out to be executed in the market when a certain set of criteria is met.
+            </p>
+            <div class="col-sm-4 col-md-12">
+                <div class="col-md-3">
+                    <form action="">
+                        <input type="image" src="https://cdn3.iconfinder.com/data/icons/complete-set-icons/512/cart512x512.png" width="70" height="70" />
+                    </form>
+                </div>
+                <div class="col-md-3">
+                    <form action="">
+                        <input type="image" src="http://icons.iconarchive.com/icons/graphicloads/100-flat/256/stop-2-icon.png" width="70" height="70" />
+                    </form>
+                </div>
+                <div class="col-md-3">
+                    <div class="dropdown">
+                        <button class="dropbtn">Cryptocurrency</button>
+                        <div class="dropdown-content">
+                            <a href="#">coin1</a>
+                            <a href="#">coin2</a>
+                            <a href="#">coin3</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="dropdown">
+                        <button class="dropbtn">Time Limit</button>
+                        <div class="dropdown-content">
+                            <a href="#">5 min</a>
+                            <a href="#">10 min</a>
+                            <a href="#">25 min</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-6">
+    <div class="panel panel-default">
+        <div class="panel-heading">Selected cryptocurrency details</div>
+        <div class="panel-body">@**@</div>
+        @**@
+        <br>
+        <br>
+        <br>
+        <br>
+    </div>
+</div>
+<div class="col-md-6">
+    <div class="panel panel-default">
+        <div class="panel-heading">Log info</div>
+        <div class="panel-body">@**@</div>
+        @**@
+        <br>
+        <br>
+        <br>
+        <br>
+    </div>
+</div>
+

@@ -1,0 +1,145 @@
+﻿@model CRbot.Models.User
+
+<head>
+    <style>
+        @@import "//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css";
+        @@import "http://fonts.googleapis.com/css?family=Roboto:400,500";
+
+
+        #sum_box h4 {
+            text-align: left;
+            margin-top: 0px;
+            font-size: 30px;
+            margin-bottom: 0px;
+            padding-bottom: 0px;
+            color: #fff;
+
+        }
+
+
+        #sum_box .db:hover {
+            color: #fff;
+            background: url(https://lh3.googleusercontent.com/-G-3pjPs7rWY/VMjvGeCeZFI/AAAAAAAAaNw/zyVfbAcRBpM/w1184-h740/Android-Lollipop-wallpapers-d.jpg);
+            opacity: 0.8;
+        }
+
+
+
+            #sum_box .db:hover .icon {
+                opacity: 1;
+                color: #999999;
+
+            }
+
+        #sum_box .icon {
+            color: #fff;
+            font-size: 55px;
+            margin-top: 7px;
+            margin-bottom: 0px;
+            float: right;
+        }
+
+
+
+
+        .panel.settings.db.mbm {
+            background: url(https://lh3.googleusercontent.com/-G-3pjPs7rWY/VMjvGeCeZFI/AAAAAAAAaNw/zyVfbAcRBpM/w1184-h740/Android-Lollipop-wallpapers-d.jpg);
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <br>
+    <div class="icon">
+        <form action="~/home/index">
+            <input type="image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Back_Arrow.svg/1024px-Back_Arrow.svg.png" width="30" height="30" />
+        </form>
+    </div>
+    <div class="centered">
+            <h3>Control Panel</h3>
+    </div>
+    <br />
+
+    <div id="sum_box" class="row mbl">
+        <div class="col-sm-6 col-md-12">
+            <div class="panel settings db mbm">
+                <div class="panel-body">
+                    <div class="icon">
+                        <form action="#">
+                            <input type="image" src="http://casenine.com/wp-content/uploads/2016/09/icon-api-geel-retina.png" width="70" height="70" />
+                        </form>
+                    </div>
+                    <h4 class="value">
+                        <span>API Settings</span>
+                    </h4>
+                    <p class="description">
+                        Set up your API connections
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="sum_box" class="row mbl">
+        <div class="col-sm-6 col-md-12">
+            <div class="panel settings db mbm">
+                <div class="panel-body">
+                    <div class="icon">
+                        <form action="#">
+                            <input type="image" src="https://lh3.ggpht.com/uA_9YvBqat-4ftl9Kn40fGuf_6GmDUKuba_Vjn2fo9CnojlOGandrcj2pLp67Q5Wb6I=w300" width="70" height="70" />
+                        </form>
+                    </div>
+                    <h4 class="value">
+                        <span>Notifications Settings</span>
+                    </h4>
+                    <p class="description">
+                        Set up your SMS or Telegram app Notifications and Alarms
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="sum_box" class="row mbl">
+        <div class="col-sm-6 col-md-12">
+            <div class="panel settings db mbm">
+                <div class="panel-body">
+                    <div class="icon">
+                        <form action="~/home/settingsstyle">
+                            <input type="image" src="http://icons.iconarchive.com/icons/graphicloads/colorful-long-shadow/256/User-icon.png" width="70" height="70" />
+                        </form>
+                    </div>
+                    <h4 class="value">
+                        <span>Personalization Settings</span>
+                    </h4>
+                    <p class="description">
+                        Personalize your CRBot app by changing colors and styles
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="sum_box" class="row mbl">
+        <div class="col-sm-6 col-md-12">
+            <div class="panel settings db mbm">
+                <div class="panel-body">
+                    <div class="icon">
+                        <form action="~/home/settingsprivacy">
+                            <input type="image" src="https://housing.umn.edu/sites/housing.umn.edu/files/key_icon-01.png" width="70" height="70" />
+                        </form>
+                    </div>
+                    <h4 class="value">
+                        <span>Privacy Settings</span>
+                    </h4>
+                    <p class="description">
+                        Privacy and Security station 
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>

@@ -1,0 +1,51 @@
+﻿@model CRbot.Models.User
+
+
+<br /><br />
+<table>
+    <tr>
+        <td>
+            Account number: 
+        </td>
+        <td>
+            <input type="text" id="txtAccount" />
+        </td>
+    </tr>
+</table>
+<input type="button" id="btnEarnings" onclick="GetAccountData()" value="Get Live Earnings Info" />
+<br />
+<div id="resultDiv"></div>
+
+
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script type="text/javascript">
+     function GetAccountData() {
+         var requestData = $('#txtAccount').val();
+         var resultElement = $('#resultDiv');
+
+         $.ajax({
+             url: 'https://api.nanopool.org/v1/eth/balance/' + requestData,
+             method: 'GET',
+
+             dataType: 'json',
+             success: function (data) {
+                 if (data.message != null) {
+                     resultElement.html(data.message);
+                 }
+                 else {
+                     resultElement.html('Current status: ' + data.data);
+                 }
+             }
+
+         });
+     };
+</script>
+
+
+
+
+
+
+
+
+

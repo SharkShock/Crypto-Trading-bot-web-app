@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - CrBot Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @{ 
+        string themeid = Session["UserTheme"].ToString();
+    }
+
+    @if (themeid == "1")
+    {
+        <link href="/Content/bootstrap.css" rel="stylesheet">
+    }
+    else
+    {
+    <link href="/Content/bootstrap2.css" rel="stylesheet">
+    }
+
+</head>
+
+<body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+
+        <div class="nav navbar-nav navbar-right col-lg-2">
+            @*@Html.ActionLink("Logout", "Logout")*@
+
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="~/home/logout/"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+            </ul>
+        </div>       
+
+        <ul class="nav navbar-nav navbar-left col-lg-2">
+            <li>
+                <form action="~/home/Index/">
+                    <input type="image" src="https://d30y9cdsu7xlg0.cloudfront.net/png/771010-200.png" width="45" height="45" />
+                </form>
+            </li>
+        </ul>
+
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @*@Html.ActionLink("CRBot","Login", new { area = "" }, new { @class = "navbar-brand" })*@
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    @*<li>@Html.ActionLink("Contact", "Contact", "Home")</li> *@
+                </ul>
+            </div>
+        </div>
+    </div>
+<div class="container body-content">
+    @RenderBody()
+    <hr />
+    <footer>
+        <p>&copy; @DateTime.Now.Year - CRBot v1.0.3</p>
+    </footer>
+</div>
+
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+@RenderSection("scripts", required: false)
+
+   
+</body>
+
+
+</html>

@@ -1,0 +1,221 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    if (Session["userID"] == null)
+    {
+        Response.Redirect("~/Home/Login");
+    }
+
+}
+
+
+
+<head>
+    <style>
+        @@import "//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css";
+        @@import "http://fonts.googleapis.com/css?family=Roboto:400,500";
+
+        
+        #sum_box h4 {
+        text-align: left;
+        margin-top: 0px;
+        font-size: 30px;
+        margin-bottom: 0px;
+        padding-bottom: 0px;
+        }
+
+
+        #sum_box .db:hover {
+        background: #40516f;
+        opacity: 0.8;
+        color: #fff;
+        }
+
+
+
+
+        #sum_box .db:hover .icon {
+        opacity: 1;
+        color: #999999;
+        }
+
+        #sum_box .icon {
+        color: #fff;
+        font-size: 55px;
+        margin-top: 7px;
+        margin-bottom: 0px;
+        float: right;
+        }
+
+
+        .panel.income.db.mbm {
+            background-color: #5cb85c;
+        }
+
+        .panel.profit.db.mbm{
+        background-color: #5bc0de;
+        }
+
+        .panel.task.db.mbm{
+        background-color: #f0ad4e;
+        }
+
+        .panel.info.db.mbm{
+        background-color: #cc4747;
+        }
+
+        .panel.profile.db.mbm {
+        background-color: #43889d;
+        }
+
+        .panel.settings.db.mbm {
+        background-color: #a679b9;
+        }
+
+    </style>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url("http://hdwallpaperdaily.com/wp-content/uploads/2014/09/abstract-mountain-peaks-wallpaper-1920x1080.jpg") no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+    </style>
+</head>
+
+
+
+<h3>Welcome Back!</h3>
+
+
+
+<body>
+    <br /><br>
+    <div id="sum_box" class="row mbl">
+
+        <div class="col-sm-6 col-md-4">
+            <div class="panel profit db mbm">
+                <div class="panel-body">
+                    <div class="icon">
+                        <form action="Index">
+                            <input type="image" src="https://www.atomix.com.au/media/2015/06/atomix_user31.png" width="70" height="70" />
+                        </form>
+                    </div>
+                    <h4 class="value">
+                        <span>@Session["LogedUsername"].ToString().ToUpper()</span>
+                    </h4>
+                    <p class="description">
+                        You logged in at: @Session["LoginDate"].ToString()
+                    </p>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4">
+            <div class="panel income db mbm">
+                <div class="panel-body">
+                    <div class="icon">
+                        <form action="~/home/trade">
+                            <input type="image" src="https://venomtdg-prod.s3.amazonaws.com/static/assets/img/icons/enthusiasm.png" width="70" height="70" />
+                        </form>
+                    </div>
+                    <h4 class="value">
+                        <span>Trade</span>
+                    </h4>
+                    <p class="description">
+                        Place your trade!
+                    </p>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4">
+            <div class="panel task db mbm">
+                <div class="panel-body">
+                    <div class="icon">
+                        <form action="~/home/robots/">
+                            <input type="image" src="https://2x71wi856ul6ksfs2u45311b-wpengine.netdna-ssl.com/wp-content/uploads/2014/04/icon-computer.png" width="70" height="70" />
+                        </form>
+                    </div>
+                    <h4 class="value">
+                        <span>Robot</span>
+                    </h4>
+                    <p class="description">
+                        An automated trading system is availabe!
+                    </p>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-4">
+            <div class="panel info db mbm">
+                <div class="panel-body">
+                    <div class="icon">
+                        <form action="~/home/market/">
+                            <input type="image" src="http://icons.iconarchive.com/icons/graphicloads/100-flat/256/currency-icon.png" width="70" height="70" />
+                        </form>
+                    </div>
+                    <h4 class="value">
+                        Crypto Market
+                    </h4>
+                    <p class="description">
+                        Market cap / 24h Vol.
+                    </p>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4">
+            <div class="panel profile db mbm">
+                <div class="panel-body">
+                    <div class="icon">
+                        <form action="~/home/binance/">
+                            <input type="image" src="https://www.cryptocompare.com/media/9350818/binance.png" width="70" height="70" />
+                        </form>
+                    </div>
+                    <h4 class="value">
+                        <span>Binance profile</span>
+                    </h4>
+                    <p class="description">
+                        Your Binance account
+                    </p>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4">
+            <div class="panel settings db mbm">
+                <div class="panel-body">
+                    <div class="icon">
+                        <form action="~/home/settings/">
+                            <input type="image" src="http://icons.iconarchive.com/icons/graphicloads/100-flat-2/256/settings-3-icon.png" width="70" height="70" />
+                        </form>
+                    </div>
+                    <h4 class="value">
+                        <span>Settings</span>
+                    </h4>
+                    <p class="description">
+                        All settings for your application
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4">
+
+        </div>
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br>
+
+
+
+
+</body>
+
